@@ -1,6 +1,6 @@
 # vagrant-ansible-multi-machine
 
-This personal development VM with Ansible provisioning.
+This personal development VM with Ansible provisioning. Fully working example LAMP stack for my personal application.
 
 
 ## Guest OS
@@ -18,11 +18,22 @@ I am using the lastest CentOS 7 x64 image from official [Hashicorp](https://atla
 - [Ansible](http://docs.ansible.com/ansible/intro_installation.html)
 
 
+## Usage
+
+Check vagrant machines: 
+
+    vagrant global-status
+
+If you would like to provision only certain node:
+
+    vagrant up prod
+
 
 
 ## Some sources
 
-https://github.com/skecskes/vagrant-centos7-ansible-lamp
-https://github.com/enginyoyen/vagrant-multi-machine
-http://blog.scottlowe.org/2014/10/22/multi-machine-vagrant-with-yaml/
+- https://github.com/skecskes/vagrant-centos7-ansible-lamp
+- https://github.com/enginyoyen/vagrant-multi-machine
+- http://blog.scottlowe.org/2014/10/22/multi-machine-vagrant-with-yaml/
+- https://www.theodo.fr/blog/2015/10/best-practices-to-build-great-ansible-playbooks/  => AWESOME
 
