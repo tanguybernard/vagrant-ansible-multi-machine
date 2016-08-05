@@ -17,12 +17,3 @@
   tags:
    - lb
 
-# Configure and deploy the Nagios monitoring node(s).
-- hosts: monitoring
-  
-  roles:
-   - httpd
-   - nagios
-  
-  tags:
-   - monitoring
