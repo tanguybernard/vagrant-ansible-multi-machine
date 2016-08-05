@@ -37,6 +37,7 @@ This repository was inspired and designed around vagrant-centos7-ansible-lamp:
 
 
 - https://github.com/enginyoyen/vagrant-multi-machine
+- https://github.com/frankdejonge/vagrant-nginx-loadbalancing
 - http://blog.scottlowe.org/2014/10/22/multi-machine-vagrant-with-yaml/
 - https://www.theodo.fr/blog/2015/10/best-practices-to-build-great-ansible-playbooks/  => AWESOME
 
