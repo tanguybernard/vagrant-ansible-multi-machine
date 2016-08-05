@@ -1,9 +1,7 @@
 ---
 - name: Install Nginx
-  sudo: yes
-  yum: name=nginx state=present
+  yum: name=nginx state=latest
 
 - name: Change default nginx site
-  sudo: yes
   template: src=default.conf dest=/etc/nginx/conf.d/default.conf
   notify: restart nginx

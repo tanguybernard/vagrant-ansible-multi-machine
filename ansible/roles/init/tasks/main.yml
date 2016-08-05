@@ -2,10 +2,10 @@
 ---
 
 - name: Set up firewall
-  shell: systemctl enable firewalld
+  command: systemctl enable firewalld
 
 - name: Start the firewall
-  shell: systemctl start firewalld
+  command: systemctl start firewalld
 
 - name: Update Yum
   yum: name=* state=latest

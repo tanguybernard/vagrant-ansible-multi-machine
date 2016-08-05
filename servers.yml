@@ -16,6 +16,7 @@
   prov: ansible
   ram: 1024
   #ip: 192.168.121.103
+  hostname: dev1.dev
   environment: dev
 - name: dev2
   box: centos/7

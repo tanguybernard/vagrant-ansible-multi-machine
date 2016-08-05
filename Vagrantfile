@@ -39,7 +39,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     memory = servers['memory'] ? servers['memory'] : 1024
     cpus = servers['cpus'] ? servers['cpus'] : 2
-    hostname =  servers['hostname'] ? servers['hostname'] : ""
+    hostname =  servers['hostname'] ? servers['hostname'] : "test.dev"
      
      
      
@@ -63,7 +63,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 srv.vm.provision "ansible" do |ansible|
                     ansible.playbook = "ansible/playbook.yml"
                     ansible.sudo = true
-                    #ansible.inventory_path = "playbooks"
+                    #ansible.inventory_path = "ansible/hosts/development"
                 end
             end
         end

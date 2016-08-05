@@ -10,7 +10,7 @@
    - phpmyadmin
     
 # Configure and deploy the load balancer(s).
-- hosts: loadbalancer
+- hosts: web
   become: yes
   become_method: sudo
   roles:
