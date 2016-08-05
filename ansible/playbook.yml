@@ -10,10 +10,9 @@
    - phpmyadmin
     
 # Configure and deploy the load balancer(s).
-- hosts: lbservers
+- hosts: loadbalancer
+  become: yes
+  become_method: sudo
   roles:
-   - haproxy
-  
-  tags:
-   - lb
+    - nginx_proxy
 
