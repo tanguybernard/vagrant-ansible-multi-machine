@@ -1,11 +1,28 @@
 # file: ansible/playbook.yml
 ---
- - hosts: all
+- hosts: all
+  roles:
+   - init
+   - httpd
+   #- php56
+   - php70
+   - mysql
+   - phpmyadmin
+    
+# Configure and deploy the load balancer(s).
+- hosts: lbservers
+  roles:
+   - haproxy
+  
+  tags:
+   - lb
 
-   roles:
-    - init
-    - httpd
-    #- php56
-    - php70
-    - mysql
-    - phpmyadmin
+# Configure and deploy the Nagios monitoring node(s).
+- hosts: monitoring
+  
+  roles:
+   - httpd
+   - nagios
+  
+  tags:
+   - monitoring
