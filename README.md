@@ -28,6 +28,10 @@ If you would like to provision only certain node:
 
     vagrant up prod
 
+## ...
+
+ansible-playbook -i ansible/development ansible/site.yml --user user --ask-pass -vvvv
+
 
 
 ## Credits

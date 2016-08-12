@@ -18,8 +18,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
 
     #config.vm.network :forwarded_port, host: 80, guest: 8080, auto_correct: true # website
-    config.vm.network :forwarded_port, guest: 3306, host: 3306, auto_correct: true # mysql
-    config.vm.network :forwarded_port, guest: 9000, host: 9000, auto_correct: true # phpmyadmin
+    #config.vm.network :forwarded_port, guest: 3306, host: 3306, auto_correct: true # mysql
+    #config.vm.network :forwarded_port, guest: 9000, host: 9000, auto_correct: true # phpmyadmin
     
     #Avoid, prefer using sftp upload via an IDE like phpstorm
     #config.vm.synced_folder "./", "/var/www/html", type: "rsync", id: "vagrant", :nfs => false,

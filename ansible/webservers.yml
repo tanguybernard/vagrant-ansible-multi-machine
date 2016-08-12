@@ -1,9 +1,9 @@
 # file: ansible/webservers.yml
 ---
 
-- hosts: all
-  user: vagrant
-  become: true  
+- hosts: webservers
+  user: usergl
+  #become: true  
   gather_facts: false
   roles:
    - init
