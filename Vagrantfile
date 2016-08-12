@@ -15,11 +15,7 @@ servers = YAML.load_file(File.join(File.dirname(__FILE__), 'servers.yml'))
 # Create boxes
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
-    #https://github.com/devopsgroup-io/vagrant-hostmanager
-    config.hostmanager.enabled = true
-    config.hostmanager.manage_host = true
-    config.hostmanager.ignore_private_ip = false
-    config.hostmanager.include_offline = true
+    
 
     #config.vm.network :forwarded_port, host: 80, guest: 8080, auto_correct: true # website
     config.vm.network :forwarded_port, guest: 3306, host: 3306, auto_correct: true # mysql
@@ -30,15 +26,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #    :mount_options => ["dmode=777", "fmode=666"]
     
     
-    
-    
    
     # Iterate through entries in YAML file
     servers.each do |servers|
 
 
     memory = servers['memory'] ? servers['memory'] : 1024
-    cpus = servers['cpus'] ? servers['cpus'] : 2
+    cpus = servers['cpus'] ? servers['cpus'] : 1
     hostname =  servers['hostname'] ? servers['hostname'] : "test.dev"
      
      
@@ -58,17 +52,26 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 vb.memory = memory
                 vb.cpus = cpus
                 vb.gui = false
+                vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+
             end
             if servers["prov"] == "ansible"
                 srv.vm.provision "ansible" do |ansible|
-                    ansible.playbook = "ansible/playbook.yml"
-                    ansible.sudo = true
-                    #ansible.inventory_path = "ansible/hosts/development"
+                    ansible.playbook = "ansible/site.yml"
+                    #ansible.sudo = true
+                    ansible.inventory_path = "ansible/"+servers["environment"]
                 end
             end
         end
     end
     
+    #https://github.com/devopsgroup-io/vagrant-hostmanager
+
+
+    config.hostmanager.enabled = true
+    config.hostmanager.manage_host = true
+    config.hostmanager.ignore_private_ip = false
+    config.hostmanager.include_offline = true
 
     config.vm.provision :shell, inline: "echo Good job"
 

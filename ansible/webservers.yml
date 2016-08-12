@@ -1,0 +1,14 @@
+# file: ansible/webservers.yml
+---
+
+- hosts: all
+  user: vagrant
+  become: true  
+  gather_facts: false
+  roles:
+   - init
+   - httpd
+   #- php56
+   - php70
+   - mysql
+   - phpmyadmin

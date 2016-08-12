@@ -5,22 +5,34 @@
   ram: 1024
   #ip: 192.168.121.101
   environment: prod
+  
 - name: staging
   box: centos/7
   prov: ansible
   ram: 1024
   #ip: 192.168.121.102
   environment: staging
-- name: dev1
+  
+- name: web1
   box: centos/7
   prov: ansible
-  ram: 1024
+  ram: 512
   #ip: 192.168.121.103
-  hostname: dev1.dev
-  environment: dev
-- name: dev2
+  hostname: web1.dev
+  environment: development
+  
+- name: web2
   box: centos/7
   prov: ansible
-  ram: 1024
+  ram: 512
   #ip: 192.168.121.104
-  environment: dev
+  hostname: web2.dev
+  environment: development
+  
+- name: lb1
+  box: centos/7
+  prov: ansible
+  ram: 512
+  #ip: 192.168.121.104
+  hostname: lb1.dev
+  environment: development
