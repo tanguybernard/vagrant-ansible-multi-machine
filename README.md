@@ -1,6 +1,6 @@
 # vagrant-ansible-multi-machine
 
-This personal development VM with Ansible provisioning. Fully working example LAMP stack for my personal application.
+This personal development VM with Ansible provisioning. CONSTRUCTION IN PROGRESS !!!!
 
 
 ## Guest OS
@@ -14,6 +14,7 @@ I am using the lastest CentOS 7 x64 image from official [Hashicorp](https://atla
 - guest additions to Vagrant
   - `vagrant plugin install vagrant-vbguest`
   - `vagrant plugin install vagrant-hostmanager`
+  - `vagrant plugin install vagrant-env`
 - [Git](https://git-scm.com/)
 - [Ansible](http://docs.ansible.com/ansible/intro_installation.html)
 
