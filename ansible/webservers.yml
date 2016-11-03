@@ -1,7 +1,7 @@
 # file: ansible/webservers.yml
 ---
 
-- hosts: webservers
+- hosts: web-servers
   user: usergl
   #become: true  
   gather_facts: false
