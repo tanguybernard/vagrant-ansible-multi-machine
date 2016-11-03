@@ -1,0 +1,14 @@
+NameVirtualHost *:80
+
+<VirtualHost *:80>
+    ServerName {{ item.servername }}
+    DocumentRoot /var/www/html/{{ item.documentrootdir }}
+
+    ErrorLog logs/{{ item.errorlog }}-error_log
+    CustomLog logs/{{ item.customlog }}-access_log common
+
+    <Directory /var/www/html/{{ item.documentrootdir }}>
+        Options None
+    </Directory>
+    
+</VirtualHost>
