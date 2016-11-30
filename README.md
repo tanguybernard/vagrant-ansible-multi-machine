@@ -15,9 +15,16 @@ I am using the lastest CentOS 7 x64 image from official [Hashicorp](https://atla
   - `vagrant plugin install vagrant-vbguest`
   - `vagrant plugin install vagrant-hostmanager`
   - `vagrant plugin install vagrant-env`
-  - `vagrant plugin install vagrant-auto_network`
 - [Git](https://git-scm.com/)
 - [Ansible](http://docs.ansible.com/ansible/intro_installation.html)
+
+## Box
+
+### Add the vagrant user to sudoers file:
+  - `$ sudo su -`
+  - `$ visudo`
+  - `# Add the following line to the end of the file.`
+  - `vagrant ALL=(ALL) NOPASSWD:ALL`
 
 
 ## Usage
