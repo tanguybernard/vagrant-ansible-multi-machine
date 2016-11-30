@@ -1,5 +1,0 @@
-- httpd:
-  servername: "web1.dev"
-  documentrootdir: "/project/super_project/"
-  errorlog: "web1.dev"
-  customlog: "web1.dev"
