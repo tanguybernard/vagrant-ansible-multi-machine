@@ -13,7 +13,7 @@
   #ip: 192.168.121.102
   environment: staging
   
-- name: web1
+- name: dev1
   box: centos/7
   prov: ansible
   ram: 512
@@ -21,7 +21,7 @@
   hostname: web1.dev
   environment: development
   
-- name: web2
+- name: dev1
   box: centos/7
   prov: ansible
   ram: 512
