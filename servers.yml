@@ -18,15 +18,15 @@
   prov: ansible
   ram: 512
   #ip: 192.168.121.103
-  hostname: web1.dev
+  hostname: merlin.dev
   environment: development
   
-- name: dev1
+- name: dev2
   box: centos/7
   prov: ansible
   ram: 512
   #ip: 192.168.121.104
-  hostname: web2.dev
+  hostname: hulk.dev
   environment: development
   
 - name: lb1
