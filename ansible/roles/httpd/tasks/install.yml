@@ -8,7 +8,7 @@
   with_items:
     - httpd
 
- - name: Ensure httpd is running
+- name: Ensure httpd is running
   service:
     name=httpd
     state=started
