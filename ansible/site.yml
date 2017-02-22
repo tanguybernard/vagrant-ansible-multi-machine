@@ -1,6 +1,6 @@
 ---
 # file: site.yml
-- include: playbooks/webservers.yml
+- include: webservers.yml
 #- include: lbservers.yml
     
 
