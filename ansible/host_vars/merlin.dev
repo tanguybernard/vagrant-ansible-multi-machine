@@ -1,5 +1,0 @@
-- httpd:
-  servername: "merlin.dev"
-  documentrootdir: "/project/super_project/"
-  errorlog: "merlin.dev"
-  customlog: "merlin.dev"
