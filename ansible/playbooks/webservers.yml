@@ -6,7 +6,8 @@
   roles:
    - init
    - httpd
-   #- php56
-   - php70
+   - php56
+   - phpunit-5.7
+   #- php70
    - mysql
    - phpmyadmin
