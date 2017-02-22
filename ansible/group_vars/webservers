@@ -1,19 +1,4 @@
 ---
 # Variables for the web server configuration
 
-# Ethernet interface on which the web server should listen.
-# Defaults to the first interface. Change this to:
-#
-#  iface: eth1
-#
-# ...to override.
-#
-iface: '{{ ansible_default_ipv4.interface }}'
-
-
-#ansible_ssh_port: 22
-ansible_ssh_user: usergl
-#ansible_ssh_private_key_file: /path/to/id_rsa.conoha
-#ssh_user: usergl
-#ssh_port: 10022
 
