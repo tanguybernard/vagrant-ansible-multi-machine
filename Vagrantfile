@@ -91,8 +91,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             if servers["prov"] == "ansible"
                 srv.vm.provision "ansible" do |ansible|
                     ansible.playbook = "ansible/site.yml"
-                    #ansible.sudo = true
                     ansible.inventory_path = "ansible/inventory/"+servers["environment"]
+                    ansible.limit = "all"
+                    ansible.extra_vars = { ansible_ssh_user: 'vagrant' }
+                    ansible.sudo = true
                 end
             end
         end
