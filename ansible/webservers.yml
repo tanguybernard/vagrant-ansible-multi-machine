@@ -1,0 +1,13 @@
+# file: ansible/playbooks/webservers.yml
+---
+
+- hosts: web-servers
+  become: yes  
+  roles:
+   - init
+   - httpd
+   - php56
+   - phpunit-5.7
+   #- php70
+   - mysql
+   - phpmyadmin
