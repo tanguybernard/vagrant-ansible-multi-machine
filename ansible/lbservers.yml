@@ -1,8 +1,0 @@
-# Configure and deploy the load balancer(s).
-- hosts: lb-servers
-
-#  roles:
-#  - haproxy
-  
-#  tags:
-#- lb
