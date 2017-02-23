@@ -9,14 +9,16 @@ I am using the lastest CentOS 7 x64 image from official [Hashicorp](https://atla
 
 ## Prerequisites / Requirements
 
-- [Virtualbox platform](https://www.virtualbox.org/wiki/Downloads)
-- [Vagrant](https://docs.vagrantup.com/v2/installation/)
+- [Virtualbox platform](https://www.virtualbox.org/wiki/Downloads) (Tested with version 5.1.4)
+- [Vagrant](https://docs.vagrantup.com/v2/installation/) (Tested with version 1.8.6)
 - guest additions to Vagrant
   - `vagrant plugin install vagrant-vbguest`
   - `vagrant plugin install vagrant-hostmanager`
   - `vagrant plugin install vagrant-env`
 - [Git](https://git-scm.com/)
-- [Ansible](http://docs.ansible.com/ansible/intro_installation.html)
+- [Ansible](http://docs.ansible.com/ansible/intro_installation.html) (Tested with version 2.2.0.0)
+- [sshpass] 
+  - OSX: (brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb)
 
 ## Box
 
