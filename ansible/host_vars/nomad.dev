@@ -1,5 +1,5 @@
-- httpd:
-  servername: "nomad.dev"
-  documentrootdir: "/project/super_project/"
-  errorlog: "nomad.dev"
-  customlog: "nomad.dev"
+#- httpd:
+#  servername: "nomad.dev"
+#  documentrootdir: "/project/super_project/"
+#  errorlog: "nomad.dev"
+#  customlog: "nomad.dev"

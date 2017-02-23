@@ -87,7 +87,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 vb.memory = memory
                 vb.cpus = cpus
                 vb.gui = false
-                vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+                #vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 
             end
             if servers["prov"] == "ansible"
