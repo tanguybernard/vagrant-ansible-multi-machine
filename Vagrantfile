@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # # vi: set ft=ruby :
- 
+
 
 # Installing required plugins
 required_plugins = %w(vagrant-vbguest vagrant-hostmanager)
@@ -18,17 +18,17 @@ end
 # Specify minimum Vagrant version and Vagrant API version
 Vagrant.require_version ">= 1.6.0"
 VAGRANTFILE_API_VERSION = "2"
- 
+
 # Require YAML module
 require 'yaml'
- 
+
 # Read YAML file with box details
 servers = YAML.load_file(File.join(File.dirname(__FILE__), 'servers.yml'))
 
- 
+
 # Create boxes
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    
+
     # Use rbconfig to determine if we're on a windows host or not.
     require 'rbconfig'
     is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
@@ -40,11 +40,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.hostmanager.ignore_private_ip = false
     config.hostmanager.include_offline = true
 
-    config.hostmanager.ip_resolver = proc do |vm, resolving_vm|
-      if vm.id
-         `VBoxManage guestproperty get #{vm.id} "/VirtualBox/GuestInfo/Net/1/V4/IP"`.split()[1]
-      end
-    end
+    #config.hostmanager.ip_resolver = proc do |vm, resolving_vm|
+    #  if vm.id
+    #     `VBoxManage guestproperty get #{vm.id} "/VirtualBox/GuestInfo/Net/1/V4/IP"`.split()[1]
+    #  end
+    #end
+
 
     # Create a forwarded port mapping which allows access to a specific port
     # within the machine from a port on the host machine. In the example below,
@@ -58,8 +59,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     # opening port for mysql
     config.vm.network "forwarded_port", guest: 3306, host: 3306, name: "MYSQL"
-    
-   
+
+
     # Iterate through entries in YAML file
     servers.each do |servers|
 
@@ -67,19 +68,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     memory = servers['memory'] ? servers['memory'] : 1024
     cpus = servers['cpus'] ? servers['cpus'] : 1
     hostname =  servers['hostname'] ? servers['hostname'] : "test.dev"
-     
-     
-     
+
+
+
         config.vm.define servers["name"] do |srv|
             srv.vm.box = servers["box"]
             srv.vm.hostname = hostname
-            
+
+
             if servers["ip"] != nil
               srv.vm.network "private_network", ip: servers["ip"]
-           else
+            else
               srv.vm.network :private_network, :auto_network => true
-           end
-            
+            end
+
             srv.vm.provider :virtualbox do |vb|
                 vb.name = servers["name"]
                 vb.memory = memory
@@ -99,10 +101,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             end
         end
     end
-    
+
     config.vm.provision :shell, inline: "echo Good job"
- 
+
     config.vm.provision :hostmanager, run: "always"
- 
+
 
 end
