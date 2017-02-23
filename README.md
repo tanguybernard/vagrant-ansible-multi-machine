@@ -18,7 +18,8 @@ I am using the lastest CentOS 7 x64 image from official [Hashicorp](https://atla
 - [Git](https://git-scm.com/)
 - [Ansible](http://docs.ansible.com/ansible/intro_installation.html) (Tested with version 2.2.0.0)
 - [sshpass] 
-  - OSX: (brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb)
+  - OSX :
+  (brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb)
 
 ## Box
 
