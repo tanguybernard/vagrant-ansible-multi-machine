@@ -1,12 +1,11 @@
 <VirtualHost *:80>
-  ServerAdmin webmaster@localhost
   DocumentRoot {{ documentrootdir }}
+  ServerName {{ servername }}
 
   <Directory />
           Options Indexes FollowSymLinks Includes ExecCGI
           AllowOverride ALL
   </Directory>
-
 
   <Directory {{ documentrootdir }}>
     Options Indexes FollowSymLinks Includes ExecCGI
