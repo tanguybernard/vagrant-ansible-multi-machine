@@ -1,6 +1,6 @@
 <VirtualHost *:80>
   ServerAdmin webmaster@localhost
-  DocumentRoot {{ doc_root }}
+  DocumentRoot {{ documentrootdir }}
 
   <Directory />
           Options Indexes FollowSymLinks Includes ExecCGI
@@ -8,7 +8,7 @@
   </Directory>
 
 
-  <Directory {{ doc_root }}>
+  <Directory {{ documentrootdir }}>
     Options Indexes FollowSymLinks Includes ExecCGI
     AllowOverride All
     Require all granted
