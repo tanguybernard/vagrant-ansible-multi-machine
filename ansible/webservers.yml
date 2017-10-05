@@ -1,7 +1,7 @@
 # file: ansible/playbooks/webservers.yml
 ---
 
-- hosts: web-servers
+- hosts: webservers
   become: yes  
   roles:
    - init
