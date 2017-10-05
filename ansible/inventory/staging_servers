@@ -1,0 +1,10 @@
+; inventories/staging_servers
+[web]
+IP
+
+[database]
+IP
+
+[staging:children]
+web
+database
