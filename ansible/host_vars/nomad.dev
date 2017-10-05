@@ -1,6 +1,6 @@
 ---
-servername: "nomad.dev"
+servername: "node-front.dev"
 documentrootdir: "/project/super_project/"
-errorlog: "nomad.dev"
-customlog: "nomad.dev"
+errorlog: "node-front.dev"
+customlog: "node-front.dev"
   
