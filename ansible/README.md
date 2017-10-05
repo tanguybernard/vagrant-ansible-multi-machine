@@ -10,6 +10,10 @@ Contains environements:
 
 ## roles
 
-Contains services, that I want for my hosts
+Contains services, that I want for my hosts:
+* php
+* httpd
+* mysql
+* ...
 
 <!-- Markdown -->
