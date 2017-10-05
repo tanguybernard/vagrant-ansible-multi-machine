@@ -18,7 +18,7 @@
   prov: ansible
   ram: 3072
   #ip: 192.168.121.103
-  hostname: nomad.dev
+  hostname: node-front.dev
   environment: development
   
 - name: dev2
@@ -27,6 +27,14 @@
   ram: 512
   #ip: 192.168.121.104
   hostname: nomad2.dev
+  environment: development
+  
+- name: db1
+  box: centos/7
+  prov: ansible
+  ram: 512
+  #ip: 192.168.121.104
+  hostname: node-database.dev
   environment: development
   
 - name: lb1
