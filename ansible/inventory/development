@@ -1,6 +1,2 @@
 [web-servers]
-  nomad.dev
-[web-servers:vars]
-ansible_password=vagrant 
-ansible_ssh_user=vagrant
-ansible_user=vagrant
+  node-front.dev
