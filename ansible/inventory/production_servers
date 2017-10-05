@@ -4,3 +4,7 @@ IP2
 
 [database]
 IP3
+
+[production:children]
+web
+database
